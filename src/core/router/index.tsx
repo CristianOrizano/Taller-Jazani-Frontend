@@ -4,6 +4,9 @@ import Admin from '../layouts/Admin';
 import Home from '../../home';
 import Investmentconcept from '../../generals/Investmentconcept/views/searchs';
 
+import Auth from '../layouts/Auth';
+import Login from '@/auth/login/views';
+
 const routes: RouteObject[] = [
 	{
 		path: '/',
@@ -14,10 +17,19 @@ const routes: RouteObject[] = [
 				element: <Home />,
 			},
 			{
-				path: '/mineral-types',
+				path: '/investmentconcept',
 				element: <Investmentconcept />,
 			},
-		
+		],
+	},
+	{
+		path: '/login',
+		element: <Auth />,
+		children: [
+			{
+				index: true,
+				element: <Login />,
+			},
 		],
 	},
 ];

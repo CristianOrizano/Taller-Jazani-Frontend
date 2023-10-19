@@ -17,7 +17,7 @@ const index = (): JSX.Element => {
 	const loadMineralTypes = async (): Promise<void> => {
 		const response = await InvestmentconceptRepository.findAll();
 
-		investmentConceptSet(response.data);
+		investmentConceptSet(response);
 		console.log('response: ', response);
 	};
 
